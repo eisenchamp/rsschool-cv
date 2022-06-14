@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+html
+{
+  scroll-behavior: smooth;
+}
 *
 {
   margin: 0;
@@ -14,9 +18,48 @@ body
   align-items: center;
   min-height: 100vh;
 }
+.page-body {
+  min-height: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+header
+{
+  position: relative;
+  width: 100%;
+  max-width: 10500px;
+  grid-template-columns: 1fr 2fr;
+  justify-content: center;
+  height: 50px;
+  background: #003147; 
+}
+.button {
+  display: none;
+}
+.nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.nav a {
+  padding: 14px 10px;
+  line-height: 50px;
+  color: white;
+}
+.nav a:hover {
+  background-color: lightblue;
+}
+.nav a:active {
+  color: white;
+  text-decoration: none;
+}
 .container
 {
-  positions: relative;
+  justify-content: center;
+  position: relative;
   width: 100%;
   max-width: 1000px;
   min-height: 1000px;
@@ -28,9 +71,8 @@ body
 }
 .container .left_Side
 {
-  positions: relative;
   background: #003147;
-  padding: 40px;
+  padding: 60px 40px;
 }
 .profileText
 {
@@ -56,9 +98,9 @@ body
   left: 0;
   width: 100%;
   height: 100%;
-  objective-fit: cover;
+  object-fit: cover;
 }
-.profileText h2
+.profileText h1
 {
   color: #fff;
   font-size: 1.5em;
@@ -72,8 +114,10 @@ body
 {
   font-size: 0.8em;
   font-weight: 300;
+  color: #ffff;
+  text-align: center;
 }
-.contactInfo
+.contact
 {
   padding-top: 40px;
 }
@@ -85,18 +129,18 @@ body
   letter-spacing: 1px;
   margin-bottom: 20px;
 }
-.contactInfo ul
+.contact ul
 {
   position: relative;
 }
-.contactInfo ul li
+.contact ul li
 {
   position: relative;
   list-style: none;
   margin: 10px 0;
   cursor: pointer;
 }
-.contactInfo ul li span
+.contact ul li span
 {
   color: #fff;
   font-weight: 300;
@@ -116,10 +160,15 @@ body
   margin: 10px 0;
   cursor: pointer;
 }
-.education ul li span
+.education ul li .text
 {
   color: #fff;
   font-weight: 300;
+}
+.education ul li .education_center{
+  font-size: 18px;
+  color: #fff;
+  font-weight: bold;
 }
 .language
 {
@@ -143,7 +192,7 @@ body
 }
 .container .right_Side
 {
-  positions: relative;
+  position: relative;
   background: #fff;
   padding: 40px;
 }
@@ -160,31 +209,139 @@ body
   color: #003147;
   text-transform: uppercase;
   letter-spacing: 1px;
+  margin-top: 30px;
   margin-bottom: 10px;
 }
 p
 {
   color: #333;
 }
-.about .box
+.about .hobbies
 {
   display: flex;
   flex-direction: row;
   margin: 20px 0;
 }
-.about .box .year_company
+.about .hobbies ul
+{
+  position: relative;
+}
+.about .hobbies ul li
+{
+  position: relative;
+  list-style: none;
+  margin: 10px 0;
+  cursor: pointer;
+}
+.about .hobbies ul li span
+{
+  color: #fff;
+  font-weight: 300;
+}
+.about .experience
+{
+  display: flex;
+  flex-direction: row;
+  margin: 20px 0;
+}
+.about .experience .year_company
 {
   min-width: 150px;
 }
-.about .box .year_company h5
+.about .experience .year_company h5
 {
   text-transform: uppercase;
   color: #848c90;
   font-weight: 600;
 }
-.about .box .text h4
+.about .experience .text h4
 {
   text-transform: uppercase;
   color: #2a7da2;
   font-size: 16px;
+}
+.about .skills
+{
+  display: flex;
+  flex-direction: row;
+  margin: 20px 0;
+}
+.about .skills ul
+{
+  position: relative;
+}
+.about .skills ul li
+{
+  position: relative;
+  list-style: none;
+  margin: 10px 0;
+  cursor: pointer;
+}
+.about .skills ul li span
+{
+  color: #fff;
+  font-weight: 300;
+}
+.about .code
+{
+  display: flex;
+  flex-direction: row;
+  margin: 20px 0;
+}
+.about .code pre
+{
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  line-height: 14px;
+}
+.about .done_tasks
+{
+  display: flex;
+  flex-direction: row;
+  margin: 20px 0;
+}
+.about .done_tasks ul
+{
+  position: relative;
+}
+.about .done_tasks ul li
+{
+  position: relative;
+  list-style: none;
+  margin: 10px 0;
+  cursor: pointer;
+}
+.about .done_taks ul li h3
+{
+  color: #fff;
+  font-weight: 300;
+}
+footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  padding: 20px 60px 20px 60px;
+  color: white;
+  background-color: #003147;
+}
+.github {
+  padding-left: 40px;
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/github-logo.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+.footer_year {
+  color: #fff;
+  justify-self: center;
+}
+.footer_rsschool {
+  justify-self: end;
+  height: 32px;
 }
